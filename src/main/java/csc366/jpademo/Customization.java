@@ -8,9 +8,10 @@ import java.util.List;
 
 @Entity
 public class Customization extends Ingredient{
-//    @OneToMany(mappedBy = "product",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true,
-//            fetch = FetchType.LAZY)
-//    private List<Product> productsAddedTo = new ArrayList<>();
+    // “customization” exists as property in target entity (CustomizationDetails)
+    @OneToMany(mappedBy = "customization",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<CustomizationDetails> customizationDetails = new ArrayList<>();
 }

@@ -40,6 +40,13 @@ public class Product {
             fetch = FetchType.LAZY)
     private List<ProductDetails> productDetails = new ArrayList<>();
 
+    // "product" exists as property in target entity (CustomizationDetails)
+    @OneToMany(mappedBy = "product",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<CustomizationDetails> customizationDetails = new ArrayList<>();
+
     @Override
     public String toString() {
         return "Product{" +

@@ -2,6 +2,7 @@ package csc366.jpademo;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+// --- ASSOCIATION CLASS ---
 @Entity
 public class ProductDetails {
     @Id

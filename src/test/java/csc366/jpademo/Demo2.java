@@ -10,20 +10,15 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.TestPropertySource;
 
 import javax.persistence.EntityManager;
-import javax.persistence.criteria.*;
 
+import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.stream.IntStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,111 +52,122 @@ public class Demo2 {
 
     @Autowired
     private EntityManager entityManager;  // https://docs.oracle.com/javaee/7/api/javax/persistence/EntityManager.html
-    
+
     @Autowired
-    private PersonRepository personRepository;
+    private CustomerRepository customerRepository;
+    @Autowired
+    private MemberRepository memberRepository;
+    @Autowired
+    private OrderRepository orderRepository;
+    @Autowired
+    private StoreRepository storeRepository;
+//    @Autowired
+//    private ProductDetailsRepository productDetailsRepository;
 
     @BeforeEach
     private void setup() {
-        Hobby h1 = new Hobby("Skiing");
-        entityManager.persist(h1);
-        Hobby h2 = new Hobby("Football");
-        entityManager.persist(h2);
-        Hobby h3 = new Hobby("Hiking");
-        entityManager.persist(h3);
-        Hobby h4 = new Hobby("Knitting");
-        entityManager.persist(h4);
-        
-        IntStream.range(0, 5).forEachOrdered(n -> {
-                String nm = String.format("Person%d", n);
-                Person p = new Person(nm, "Test", nm+"@test.com");
-                if (n >= 1) { p.addHobby(h1); }
-                if (n >= 2) { p.addHobby(h2); }
-                if (n >= 3) { p.addHobby(h3); }
-                if (n >= 4) { p.addHobby(h4); }
-                entityManager.persist(p);
-            });
-        
-	entityManager.flush();  // "Synchronize the persistence context to the underlying database"
         entityManager.clear();  // "Clear the persistence context, causing all managed entities to become detached."
+
+        CustomerOrder order = new CustomerOrder();
+        order.setCost(65.30);
+
+        entityManager.persist(order);
+
+//        Product product = new Product();
+//        product.setName("coffee");
+//        ProductDetails productDetails = new ProductDetails(1, 100, 1, 10);
+//        productDetails.setOrder(order);
+//        productDetails.setProduct(product);
+
+//        entityManager.persist(product);
+//        entityManager.persist(productDetails);
+
+        Customer customer = new Customer(10);
+        customer.setCustomerOrders(Arrays.asList(order));
+        order.setCustomer(customer);
+
+        entityManager.persist(customer);
+
+        Store store1 = new Store();
+        CustomerOrder order2 = new CustomerOrder();
+        order2.setCost(125.12);
+        order2.setStore(store1);
+
+        Store store2 = new Store();
+        CustomerOrder order3 = new CustomerOrder();
+        order3.setCost(9.10);
+        order3.setStore(store2);
+
+        entityManager.persist(store1);
+        entityManager.persist(store2);
+        entityManager.persist(order2);
+        entityManager.persist(order3);
+
+        Member member = new Member();
+        member.setEmail("test@example.com");
+        member.setFirstName("Jane");
+        member.setLastName("Doe");
+        member.setPhoneNumber("1234567890");
+        member.setLoyaltyPoints(20);
+        member.setCustomerOrders(Arrays.asList(order2, order3));
+
+        entityManager.persist(member);
+
+	    entityManager.flush();  // "Synchronize the persistence context to the underlying database"
     }
-    
+
+    // #1: Find the total amount spent by a specific customer on a specific order.
     @Test
     @Order(1)
-    public void testFindPerson() {
-	Person p = personRepository.findByFirstName("Person1");
-	log.info(p.toString());
+    public void testFindOrderTotalCost1() {
+        Customer customer = customerRepository.findAll().get(1);
+        CustomerOrder order = customer.getCustomerOrders().get(0);
+        Double totalCost = orderRepository.findOrderTotalCost(customer.getId(), order.getId());
+
+        log.info("Total cost: " + totalCost);
+        assertEquals(65.30, totalCost);
     }
-    
+
+    // 2: Find the current loyalty points of a specific customer.
     @Test
     @Order(2)
-    public void testFindAllPeople() {
-        List<Person> all = personRepository.findAll();  // 2n+1 SELECT Problem
-        log.info(all.toString());
+    public void testFindLoyaltyPoints() {
+        Member member = memberRepository.findAll().get(0);
+        int loyaltyPoints = memberRepository.findLoyaltyPoints(member.getId());
+
+        log.info("Loyalty points: " + loyaltyPoints);
+        assertEquals(20, loyaltyPoints);
     }
 
+    // 3: List all the products (and their cost) of a specific order.
     @Test
     @Order(3)
-    // https://en.wikibooks.org/wiki/Java_Persistence/JPQL
-    public void testJpqlQuery1() {
-        List<Person> all = entityManager.createQuery("select p from Person p " +
-                                                     "join p.hobbies join p.addresses",
-                                                     Person.class).getResultList();
-        log.info(all.toString());
+    public void testGetOrderDetails() {
+        Customer customer = customerRepository.findAll().get(1);
+        CustomerOrder order = customer.getCustomerOrders().get(0);
+
+//        List<ProductDetails> productDetails = productDetailsRepository.findByCustomerOrder(order);
+//        log.info("Product details: " + productDetails);
+//        assertEquals(1, retrievedProductDetails.size());
+
     }
 
+    // 4: Find the most frequently ordered product by a specific customer.
     @Test
     @Order(4)
-    public void testJpqlQuery2() {
-        List<Person> all = entityManager.createQuery("select p from Person p " +
-                                                     " left join p.hobbies " +
-                                                     " left join p.addresses",
-                                                     Person.class).getResultList();
-        log.info(all.toString());
+    public void testFindMostFrequentlyOrderedProduct() {
+
     }
 
+    // 5: List all stores from which a specific customer has placed an order.
     @Test
     @Order(5)
-    public void testJpqlQuery3() {
-        List<Person> all = entityManager.createQuery("select distinct p from Person p " +
-                                                     " left join fetch p.hobbies " +
-                                                     " left join fetch p.addresses",
-                                                     Person.class).getResultList();
-        log.info(all.toString());
+    public void testFindAllStoresOrderedFrom() {
+        Member member = memberRepository.findAll().get(0);
+        long memberId = member.getId();
+        System.out.println("memberId: " + memberId);
+        List<Store> stores = storeRepository.findAll();
+
+        log.info("All stores: " + stores);
     }
-
-    @Test
-    @Order(6)
-    // https://en.wikibooks.org/wiki/Java_Persistence/Criteria
-    // https://developer.ibm.com/articles/j-typesafejpa/
-    public void testCriteriaQuery1() {
-
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Person> cq = cb.createQuery(Person.class);
-        Root<Person> pq = cq.from(Person.class);
-        cq.where(cb.or(
-                       cb.like(pq.get("email"), "Person2%"),
-                       cb.equal(pq.get("firstName"), "Person3")
-                       )
-                 );        
-        List<Person> all = entityManager.createQuery(cq).getResultList();
-
-        log.info(all.toString());
-    }
-
-    @Test
-    @Order(7)
-    public void testCriteriaQuery2() {
-
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Person> cq = cb.createQuery(Person.class);
-        Root<Person> pq = cq.from(Person.class);
-        pq.fetch("addresses", JoinType.LEFT);
-        pq.fetch("hobbies", JoinType.LEFT);
-        //cq.distinct(true);
-        List<Person> all = entityManager.createQuery(cq).getResultList();
-
-        log.info(all.toString());
-    }
-    
 }

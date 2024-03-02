@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Demo2</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Demo2</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/csc366.jpademo.html">csc366.jpademo</a> &gt; Demo2</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.313s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testFindAllStoresOrderedFrom()</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindLoyaltyPoints()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindMostFrequentlyOrderedProduct()</td>
+<td class="success">0.012s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindOrderTotalCost1()</td>
+<td class="success">0.246s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetOrderDetails()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>11:25:33.802 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:25:33.811 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:25:33.839 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [csc366.jpademo.Demo2] from class [org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper]
+11:25:33.854 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [csc366.jpademo.Demo2], using SpringBootContextLoader
+11:25:33.858 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2-context.xml] does not exist
+11:25:33.858 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2Context.groovy] does not exist
+11:25:33.859 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [csc366.jpademo.Demo2]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:25:33.859 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [csc366.jpademo.Demo2]: Demo2 does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:25:33.961 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/adellevo/Desktop/366TeamProject/build/classes/java/main/csc366/jpademo/JpaDemoApplication.class]
+11:25:33.967 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration csc366.jpademo.JpaDemoApplication for test class csc366.jpademo.Demo2
+11:25:33.969 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - @TestExecutionListeners is not present for class [csc366.jpademo.Demo2]: using defaults.
+11:25:33.969 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+11:25:33.985 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@522a32b1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35390ee3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e01a982, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5ddea849, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5ee2b6f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23d1e5d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@704f1591, org.springframework.test.context.event.EventPublishingTestExecutionListener@58fb7731, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@13e547a9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3fb6cf60, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37ddb69a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@349c1daf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@dfddc9a]
+11:25:33.988 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@52de51b6 testClass = Demo2, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@2d967dfc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+11:25:33.998 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@52de51b6 testClass = Demo2, testInstance = csc366.jpademo.Demo2@7096b474, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@2d967dfc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+11:25:34.092 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true, server.port=-1}
+2024-03-02 11:25:34 - Starting Demo2 on Adelles-MBP.lan with PID 33489 (started by adellevo in /Users/adellevo/Desktop/366TeamProject)
+2024-03-02 11:25:34 - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2024-03-02 11:25:34 - The following profiles are active: junit
+2024-03-02 11:25:36 - 
+    
+    create table customer (
+       customer_type integer not null,
+        customer_id bigint not null,
+        email varchar(255),
+        first_name varchar(255),
+        last_name varchar(255),
+        loyalty_points integer,
+        phone_number varchar(15),
+        primary key (customer_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table customer_order (
+       order_id bigint generated by default as identity,
+        date date,
+        points_earned integer not null,
+        total_cost double not null,
+        customer_id bigint,
+        store_id bigint,
+        primary key (order_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table customization_details (
+       customization_details_id bigint generated by default as identity,
+        price integer not null,
+        quantity integer not null,
+        ingredient_id bigint not null,
+        product_id bigint not null,
+        primary key (customization_details_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table ingredient (
+       dtype varchar(31) not null,
+        ingredient_id bigint generated by default as identity,
+        name varchar(255) not null,
+        primary key (ingredient_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table nutrition_label (
+       label_id bigint generated by default as identity,
+        calories varchar(255) not null,
+        total_grams_fat varchar(255) not null,
+        primary key (label_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table order_product (
+       order_id bigint not null,
+        product_id bigint not null,
+        primary key (order_id, product_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table product (
+       product_id bigint generated by default as identity,
+        name varchar(255) not null,
+        primary key (product_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table product_details (
+       product_details_id bigint generated by default as identity,
+        point_value integer not null,
+        price integer not null,
+        quantity integer not null,
+        size integer not null,
+        order_id bigint not null,
+        product_id bigint not null,
+        primary key (product_details_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    create table store (
+       store_id bigint generated by default as identity,
+        closing_time time,
+        opening_time time,
+        primary key (store_id)
+    )
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       drop constraint if exists UK_dwk6cx0afu8bs9o4t536v1j5v
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       add constraint UK_dwk6cx0afu8bs9o4t536v1j5v unique (email)
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       drop constraint if exists UK_m7ntsh8nqls5bld45v3kc99hk
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       add constraint UK_m7ntsh8nqls5bld45v3kc99hk unique (loyalty_points)
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       drop constraint if exists UK_rosd2guvs3i1agkplv5n8vu82
+2024-03-02 11:25:36 - 
+    
+    alter table customer 
+       add constraint UK_rosd2guvs3i1agkplv5n8vu82 unique (phone_number)
+2024-03-02 11:25:36 - 
+    
+    alter table ingredient 
+       drop constraint if exists UK_bcuaj97y3iu3t2vj26jg6hijj
+2024-03-02 11:25:36 - 
+    
+    alter table ingredient 
+       add constraint UK_bcuaj97y3iu3t2vj26jg6hijj unique (name)
+2024-03-02 11:25:36 - 
+    
+    alter table nutrition_label 
+       drop constraint if exists UK_93aauoplfde3jgqhp3qv9f1vd
+2024-03-02 11:25:36 - 
+    
+    alter table nutrition_label 
+       add constraint UK_93aauoplfde3jgqhp3qv9f1vd unique (calories)
+2024-03-02 11:25:36 - 
+    
+    alter table nutrition_label 
+       drop constraint if exists UK_np9t28wm6d9droe5wtmkwbd13
+2024-03-02 11:25:36 - 
+    
+    alter table nutrition_label 
+       add constraint UK_np9t28wm6d9droe5wtmkwbd13 unique (total_grams_fat)
+2024-03-02 11:25:36 - 
+    
+    alter table product 
+       drop constraint if exists UK_jmivyxk9rmgysrmsqw15lqr5b
+2024-03-02 11:25:36 - 
+    
+    alter table product 
+       add constraint UK_jmivyxk9rmgysrmsqw15lqr5b unique (name)
+2024-03-02 11:25:36 - 
+    
+    alter table customer_order 
+       add constraint FKf9abd30bhiqvugayxlpq8ryq9 
+       foreign key (customer_id) 
+       references customer
+2024-03-02 11:25:36 - 
+    
+    alter table customer_order 
+       add constraint FKmajgn7v8wotqdc9s4psimtwjg 
+       foreign key (store_id) 
+       references store
+2024-03-02 11:25:36 - 
+    
+    alter table customization_details 
+       add constraint FKpt25h8jajlybiy7kmc7q715rd 
+       foreign key (ingredient_id) 
+       references ingredient
+2024-03-02 11:25:36 - 
+    
+    alter table customization_details 
+       add constraint FKg2opptq9889mqeta1higfc6vn 
+       foreign key (product_id) 
+       references product
+2024-03-02 11:25:36 - 
+    
+    alter table order_product 
+       add constraint FKhnfgqyjx3i80qoymrssls3kno 
+       foreign key (product_id) 
+       references product
+2024-03-02 11:25:36 - 
+    
+    alter table order_product 
+       add constraint FKmx4qjk512djj1adniweb0599c 
+       foreign key (order_id) 
+       references customer_order
+2024-03-02 11:25:36 - 
+    
+    alter table product_details 
+       add constraint FK5v7jkk2wxjtr17ou8xx08x0pv 
+       foreign key (order_id) 
+       references customer_order
+2024-03-02 11:25:36 - 
+    
+    alter table product_details 
+       add constraint FKrhahp4f26x99lqf0kybcs79rb 
+       foreign key (product_id) 
+       references product
+2024-03-02 11:25:36 - Started Demo2 in 2.708 seconds (JVM running for 3.675)
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:36 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:36 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:36 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:36 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        customer
+        (customer_type, customer_id) 
+    values
+        (670819326, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:36 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:36 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:36 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:36 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:36 - binding parameter [4] as [BIGINT] - [1]
+2024-03-02 11:25:36 - binding parameter [5] as [DOUBLE] - [125.12]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:36 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:36 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:36 - binding parameter [4] as [BIGINT] - [2]
+2024-03-02 11:25:36 - binding parameter [5] as [DOUBLE] - [9.1]
+2024-03-02 11:25:36 - 
+    insert 
+    into
+        customer
+        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
+    values
+        (?, ?, ?, ?, ?, 1, ?)
+2024-03-02 11:25:36 - binding parameter [1] as [VARCHAR] - [test@example.com]
+2024-03-02 11:25:36 - binding parameter [2] as [VARCHAR] - [Jane]
+2024-03-02 11:25:36 - binding parameter [3] as [VARCHAR] - [Doe]
+2024-03-02 11:25:36 - binding parameter [4] as [INTEGER] - [20]
+2024-03-02 11:25:36 - binding parameter [5] as [VARCHAR] - [1234567890]
+2024-03-02 11:25:36 - binding parameter [6] as [BIGINT] - [0]
+2024-03-02 11:25:36 - 
+    update
+        customer_order 
+    set
+        customer_id=?,
+        date=?,
+        points_earned=?,
+        store_id=?,
+        total_cost=? 
+    where
+        order_id=?
+2024-03-02 11:25:36 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:36 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:36 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:36 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:36 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:36 - binding parameter [6] as [BIGINT] - [1]
+2024-03-02 11:25:37 - 
+    select
+        customer0_.customer_id as customer2_0_,
+        customer0_.email as email3_0_,
+        customer0_.first_name as first_na4_0_,
+        customer0_.last_name as last_nam5_0_,
+        customer0_.loyalty_points as loyalty_6_0_,
+        customer0_.phone_number as phone_nu7_0_,
+        customer0_.customer_type as customer1_0_ 
+    from
+        customer customer0_
+2024-03-02 11:25:37 - 
+    SELECT
+        total_cost 
+    FROM
+        customer_order 
+    WHERE
+        customer_id = ? 
+        and order_id = ?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [2] as [BIGINT] - [1]
+2024-03-02 11:25:37 - Total cost: 65.3
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (customer_type, customer_id) 
+    values
+        (670819326, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [3]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [125.12]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [4]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [9.1]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
+    values
+        (?, ?, ?, ?, ?, 1, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [VARCHAR] - [test@example.com]
+2024-03-02 11:25:37 - binding parameter [2] as [VARCHAR] - [Jane]
+2024-03-02 11:25:37 - binding parameter [3] as [VARCHAR] - [Doe]
+2024-03-02 11:25:37 - binding parameter [4] as [INTEGER] - [20]
+2024-03-02 11:25:37 - binding parameter [5] as [VARCHAR] - [1234567890]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [0]
+2024-03-02 11:25:37 - 
+    update
+        customer_order 
+    set
+        customer_id=?,
+        date=?,
+        points_earned=?,
+        store_id=?,
+        total_cost=? 
+    where
+        order_id=?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [4]
+2024-03-02 11:25:37 - 
+    select
+        member0_.customer_id as customer2_0_,
+        member0_.email as email3_0_,
+        member0_.first_name as first_na4_0_,
+        member0_.last_name as last_nam5_0_,
+        member0_.loyalty_points as loyalty_6_0_,
+        member0_.phone_number as phone_nu7_0_ 
+    from
+        customer member0_ 
+    where
+        member0_.customer_type=1
+2024-03-02 11:25:37 - 
+    SELECT
+        loyalty_points 
+    FROM
+        customer 
+    WHERE
+        customer_id = ?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [0]
+2024-03-02 11:25:37 - Loyalty points: 20
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (customer_type, customer_id) 
+    values
+        (670819326, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [5]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [125.12]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [6]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [9.1]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
+    values
+        (?, ?, ?, ?, ?, 1, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [VARCHAR] - [test@example.com]
+2024-03-02 11:25:37 - binding parameter [2] as [VARCHAR] - [Jane]
+2024-03-02 11:25:37 - binding parameter [3] as [VARCHAR] - [Doe]
+2024-03-02 11:25:37 - binding parameter [4] as [INTEGER] - [20]
+2024-03-02 11:25:37 - binding parameter [5] as [VARCHAR] - [1234567890]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [0]
+2024-03-02 11:25:37 - 
+    update
+        customer_order 
+    set
+        customer_id=?,
+        date=?,
+        points_earned=?,
+        store_id=?,
+        total_cost=? 
+    where
+        order_id=?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [7]
+2024-03-02 11:25:37 - 
+    select
+        customer0_.customer_id as customer2_0_,
+        customer0_.email as email3_0_,
+        customer0_.first_name as first_na4_0_,
+        customer0_.last_name as last_nam5_0_,
+        customer0_.loyalty_points as loyalty_6_0_,
+        customer0_.phone_number as phone_nu7_0_,
+        customer0_.customer_type as customer1_0_ 
+    from
+        customer customer0_
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (customer_type, customer_id) 
+    values
+        (670819326, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [7]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [125.12]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [8]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [9.1]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
+    values
+        (?, ?, ?, ?, ?, 1, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [VARCHAR] - [test@example.com]
+2024-03-02 11:25:37 - binding parameter [2] as [VARCHAR] - [Jane]
+2024-03-02 11:25:37 - binding parameter [3] as [VARCHAR] - [Doe]
+2024-03-02 11:25:37 - binding parameter [4] as [INTEGER] - [20]
+2024-03-02 11:25:37 - binding parameter [5] as [VARCHAR] - [1234567890]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [0]
+2024-03-02 11:25:37 - 
+    update
+        customer_order 
+    set
+        customer_id=?,
+        date=?,
+        points_earned=?,
+        store_id=?,
+        total_cost=? 
+    where
+        order_id=?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [10]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (customer_type, customer_id) 
+    values
+        (670819326, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        store
+        (store_id, closing_time, opening_time) 
+    values
+        (null, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [TIME] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [TIME] - [null]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [9]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [125.12]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer_order
+        (order_id, customer_id, date, points_earned, store_id, total_cost) 
+    values
+        (null, ?, ?, ?, ?, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [9.1]
+2024-03-02 11:25:37 - 
+    insert 
+    into
+        customer
+        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
+    values
+        (?, ?, ?, ?, ?, 1, ?)
+2024-03-02 11:25:37 - binding parameter [1] as [VARCHAR] - [test@example.com]
+2024-03-02 11:25:37 - binding parameter [2] as [VARCHAR] - [Jane]
+2024-03-02 11:25:37 - binding parameter [3] as [VARCHAR] - [Doe]
+2024-03-02 11:25:37 - binding parameter [4] as [INTEGER] - [20]
+2024-03-02 11:25:37 - binding parameter [5] as [VARCHAR] - [1234567890]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [0]
+2024-03-02 11:25:37 - 
+    update
+        customer_order 
+    set
+        customer_id=?,
+        date=?,
+        points_earned=?,
+        store_id=?,
+        total_cost=? 
+    where
+        order_id=?
+2024-03-02 11:25:37 - binding parameter [1] as [BIGINT] - [10]
+2024-03-02 11:25:37 - binding parameter [2] as [DATE] - [null]
+2024-03-02 11:25:37 - binding parameter [3] as [INTEGER] - [0]
+2024-03-02 11:25:37 - binding parameter [4] as [BIGINT] - [null]
+2024-03-02 11:25:37 - binding parameter [5] as [DOUBLE] - [65.3]
+2024-03-02 11:25:37 - binding parameter [6] as [BIGINT] - [13]
+2024-03-02 11:25:37 - 
+    select
+        member0_.customer_id as customer2_0_,
+        member0_.email as email3_0_,
+        member0_.first_name as first_na4_0_,
+        member0_.last_name as last_nam5_0_,
+        member0_.loyalty_points as loyalty_6_0_,
+        member0_.phone_number as phone_nu7_0_ 
+    from
+        customer member0_ 
+    where
+        member0_.customer_type=1
+memberId: 0
+2024-03-02 11:25:37 - 
+    select
+        store0_.store_id as store_id1_8_,
+        store0_.closing_time as closing_2_8_,
+        store0_.opening_time as opening_3_8_ 
+    from
+        store store0_
+2024-03-02 11:25:37 - All stores: [csc366.jpademo.Store@35b58254, csc366.jpademo.Store@319058ce]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at Mar 2, 2024, 11:25:37 AM</p>
+</div>
+</div>
+</body>
+</html>

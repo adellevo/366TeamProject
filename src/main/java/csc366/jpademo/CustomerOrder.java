@@ -40,10 +40,6 @@ public class CustomerOrder {
         this.customer = customer;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
     public Store getStore() {
         return store;
     }
@@ -53,15 +49,19 @@ public class CustomerOrder {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     private Store store;
 
-    @ManyToMany
-    @JoinTable(
-            name = "order_product", // join table name
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Product> products;
+    // "order" exists as property in target entity (ProductDetails)
+    @OneToMany(mappedBy = "order",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<ProductDetails> productDetails = new ArrayList<>();
 
     public Long getId() {
         return order_id;

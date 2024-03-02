@@ -61,32 +61,31 @@ public class Demo2 {
     private OrderRepository orderRepository;
     @Autowired
     private StoreRepository storeRepository;
-//    @Autowired
-//    private ProductDetailsRepository productDetailsRepository;
+    @Autowired
+    private ProductDetailsRepository productDetailsRepository;
 
     @BeforeEach
     private void setup() {
         entityManager.clear();  // "Clear the persistence context, causing all managed entities to become detached."
 
+        Customer customer = new Customer(10);
+        entityManager.persist(customer);
+
         CustomerOrder order = new CustomerOrder();
         order.setCost(65.30);
-
+        order.setCustomer(customer);
         entityManager.persist(order);
 
-//        Product product = new Product();
-//        product.setName("coffee");
-//        ProductDetails productDetails = new ProductDetails(1, 100, 1, 10);
-//        productDetails.setOrder(order);
-//        productDetails.setProduct(product);
-
-//        entityManager.persist(product);
-//        entityManager.persist(productDetails);
-
-        Customer customer = new Customer(10);
         customer.setCustomerOrders(Arrays.asList(order));
-        order.setCustomer(customer);
 
-        entityManager.persist(customer);
+        Product product = new Product();
+        product.setName("coffee");
+        entityManager.persist(product);
+
+        ProductDetails productDetails = new ProductDetails(1, 100, 1, 10);
+        productDetails.setOrder(order);
+        productDetails.setProduct(product);
+        entityManager.persist(productDetails);
 
         Store store1 = new Store();
         CustomerOrder order2 = new CustomerOrder();
@@ -98,11 +97,6 @@ public class Demo2 {
         order3.setCost(9.10);
         order3.setStore(store2);
 
-        entityManager.persist(store1);
-        entityManager.persist(store2);
-        entityManager.persist(order2);
-        entityManager.persist(order3);
-
         Member member = new Member();
         member.setEmail("test@example.com");
         member.setFirstName("Jane");
@@ -111,7 +105,11 @@ public class Demo2 {
         member.setLoyaltyPoints(20);
         member.setCustomerOrders(Arrays.asList(order2, order3));
 
+        entityManager.persist(store1);
+        entityManager.persist(store2);
         entityManager.persist(member);
+        entityManager.persist(order2);
+        entityManager.persist(order3);
 
 	    entityManager.flush();  // "Synchronize the persistence context to the underlying database"
     }
@@ -146,10 +144,9 @@ public class Demo2 {
         Customer customer = customerRepository.findAll().get(1);
         CustomerOrder order = customer.getCustomerOrders().get(0);
 
-//        List<ProductDetails> productDetails = productDetailsRepository.findByCustomerOrder(order);
-//        log.info("Product details: " + productDetails);
-//        assertEquals(1, retrievedProductDetails.size());
-
+        List<ProductDetails> productDetails = productDetailsRepository.findByOrderId(order.getId());
+        log.info("Product details: " + productDetails.toString());
+        assertEquals(1, productDetails.size());
     }
 
     // 4: Find the most frequently ordered product by a specific customer.

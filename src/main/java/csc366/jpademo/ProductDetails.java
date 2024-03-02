@@ -76,15 +76,23 @@ public class ProductDetails {
         this.point_value = point_value;
     }
 
-    @MapsId("orderId")
     @ManyToOne
     @JoinColumn(name = "order_id")
     private CustomerOrder order;
 
-    @MapsId("productId")
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-
+    @Override
+    public String toString() {
+        return "ProductDetails{" +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", size=" + size +
+                ", point_value=" + point_value +
+                ", order=" + order +
+                ", product=" + product.getName() +
+                '}';
+    }
 }

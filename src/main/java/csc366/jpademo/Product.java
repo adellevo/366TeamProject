@@ -17,10 +17,19 @@ public class Product {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @NotNull
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<CustomerOrder> orders;
+    // "product" exists as property in target entity (ProductDetails)
+    @OneToMany(mappedBy = "product",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<ProductDetails> productDetails = new ArrayList<>();
+
 }

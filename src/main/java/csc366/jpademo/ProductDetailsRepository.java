@@ -13,6 +13,7 @@ public interface ProductDetailsRepository extends JpaRepository<ProductDetails, 
     @Query("SELECT pd.product FROM ProductDetails pd WHERE pd.order.customer.id = :customerId GROUP BY pd.product ORDER BY COUNT(pd.product) DESC")
     List<Product> findMostFrequentlyOrderedProducts(@Param("customerId") long customerId);
 
-//    List<ProductDetails> findByCustomerOrder(CustomerOrder order);
+    @Query("SELECT pd FROM ProductDetails pd WHERE pd.order.order_id = :orderId")
+    List<ProductDetails> findByOrderId(@Param("orderId") Long orderId);
 }
 

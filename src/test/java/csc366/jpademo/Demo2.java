@@ -18,7 +18,9 @@ import org.springframework.test.context.TestPropertySource;
 import javax.persistence.EntityManager;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,7 +74,7 @@ public class Demo2 {
         entityManager.persist(customer);
 
         CustomerOrder order = new CustomerOrder();
-        order.setCost(65.30);
+        order.setCost(35.00);
         order.setCustomer(customer);
         entityManager.persist(order);
 
@@ -82,7 +84,7 @@ public class Demo2 {
         product.setName("coffee");
         entityManager.persist(product);
 
-        ProductDetails productDetails = new ProductDetails(1, 100, 1, 10);
+        ProductDetails productDetails = new ProductDetails(1, 6.50, "S", 10);
         productDetails.setOrder(order);
         productDetails.setProduct(product);
         entityManager.persist(productDetails);
@@ -117,13 +119,13 @@ public class Demo2 {
     // #1: Find the total amount spent by a specific customer on a specific order.
     @Test
     @Order(1)
-    public void testFindOrderTotalCost1() {
+    public void testFindOrderTotalCost() {
         Customer customer = customerRepository.findAll().get(1);
         CustomerOrder order = customer.getCustomerOrders().get(0);
         Double totalCost = orderRepository.findOrderTotalCost(customer.getId(), order.getId());
 
         log.info("Total cost: " + totalCost);
-        assertEquals(65.30, totalCost);
+        assertEquals(35.00, totalCost);
     }
 
     // 2: Find the current loyalty points of a specific customer.
@@ -143,17 +145,67 @@ public class Demo2 {
     public void testGetOrderDetails() {
         Customer customer = customerRepository.findAll().get(1);
         CustomerOrder order = customer.getCustomerOrders().get(0);
-
         List<ProductDetails> productDetails = productDetailsRepository.findByOrderId(order.getId());
-        log.info("Product details: " + productDetails.toString());
+
+        log.info("All product details: " + productDetails.toString());
+        assertEquals(productDetails.get(0).getProduct().getName(), "coffee");
+        assertEquals(productDetails.get(0).getPrice(), 6.50);
         assertEquals(1, productDetails.size());
     }
 
-    // 4: Find the most frequently ordered product by a specific customer.
+    // 4: Find the most frequently ordered product by a specific customer (by quantity).
     @Test
     @Order(4)
     public void testFindMostFrequentlyOrderedProduct() {
+        entityManager.clear();
+        Member member = memberRepository.findAll().get(0);
 
+        // new products
+        Product product1 = new Product();
+        product1.setName("smoothie");
+        entityManager.persist(product1);
+
+        Product product2 = new Product();
+        product2.setName("scone");
+        entityManager.persist(product2);
+
+        // orders
+        for (int i = 0; i < 3; i++) {
+            CustomerOrder order = new CustomerOrder();
+            order.setCost(7.50);
+            order.setCustomer(member);
+            entityManager.persist(order);
+
+            ProductDetails productDetails = new ProductDetails(1, 7.50, "L", 10);
+            productDetails.setOrder(order);
+            productDetails.setProduct(product1);  // Product 1 is ordered 3 times, with a quantity of 1
+            entityManager.persist(productDetails);
+        }
+
+        CustomerOrder order = new CustomerOrder();
+        order.setCost(100.00);
+        order.setCustomer(member);
+        entityManager.persist(order);
+
+        ProductDetails productDetails = new ProductDetails(4, 3.25, "L", 10);
+        productDetails.setOrder(order);
+        productDetails.setProduct(product2);  // Product 2 is ordered once, with a quantity of 4
+        entityManager.persist(productDetails);
+
+        int PN_INDEX = 0;       // product name index
+        int QTY_INDEX = 1;      // quantity index
+
+        List<Object[]> allProductsOrdered = productDetailsRepository.findFavoriteProductByCustomerId(member.getId());
+        Object[] mostFrequentlyOrdered = allProductsOrdered.get(0);
+        Product mostFrequentlyOrderedProduct = (Product) mostFrequentlyOrdered[PN_INDEX];
+
+        log.info("Most frequently ordered product: " + mostFrequentlyOrderedProduct.toString() + " | " +
+                "Quantity: " + mostFrequentlyOrdered[QTY_INDEX]);
+        assertEquals(product2.getId(), mostFrequentlyOrderedProduct.getId());
+
+        assertEquals(allProductsOrdered.get(0)[QTY_INDEX], 4L);
+        assertEquals(allProductsOrdered.get(1)[QTY_INDEX], 3L);
+        entityManager.flush();
     }
 
     // 5: List all stores from which a specific customer has placed an order.
@@ -166,5 +218,6 @@ public class Demo2 {
         List<Store> stores = storeRepository.findAll();
 
         log.info("All stores: " + stores);
+        assertEquals(stores.size(), 2);
     }
 }

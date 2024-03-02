@@ -18,6 +18,12 @@ public class CustomerOrder {
     @Temporal(TemporalType.DATE)
     private Date date;
 
+    @NotNull
+    private double total_cost;
+
+    @NotNull
+    private int points_earned;
+
     public double getCost() {
         return total_cost;
     }
@@ -25,12 +31,6 @@ public class CustomerOrder {
     public void setCost(double total_cost) {
         this.total_cost = total_cost;
     }
-
-    @NotNull
-    private double total_cost;
-
-    @NotNull
-    private int points_earned;
 
     public Customer getCustomer() {
         return customer;
@@ -48,6 +48,14 @@ public class CustomerOrder {
         this.store = store;
     }
 
+    public Long getId() {
+        return order_id;
+    }
+
+    public void setId(long id) {
+        this.order_id = id;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;
@@ -62,14 +70,6 @@ public class CustomerOrder {
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<ProductDetails> productDetails = new ArrayList<>();
-
-    public Long getId() {
-        return order_id;
-    }
-
-    public void setId(long id) {
-        this.order_id = id;
-    }
 
     @Override
     public boolean equals(Object o) {

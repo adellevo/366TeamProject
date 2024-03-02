@@ -5,6 +5,6 @@ Run all tests with:
 
 `./gradlew test`
 
-To run a single test class (for example: `Demo0`):
+To run a single test class (for example: `Demo2`):
 
-`./gradlew test --tests *Demo0`
+`./gradlew test --tests Demo2.testName`

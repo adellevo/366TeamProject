@@ -20,4 +20,21 @@ public class Store {
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<CustomerOrder> orders = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "store_id=" + store_id +
+                ", opening_time=" + opening_time +
+                ", closing_time=" + closing_time +
+                '}';
+    }
+
+    public long getId() {
+        return store_id;
+    }
+
+    public void setId(long store_id) {
+        this.store_id = store_id;
+    }
 }

@@ -2,6 +2,7 @@ package csc366.jpademo;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+// --- ASSOCIATION CLASS ---
 @Entity
 public class ProductDetails {
     @Id
@@ -12,21 +13,21 @@ public class ProductDetails {
     private int quantity;
 
     @NotNull
-    private int price;
+    private double price;
 
     @NotNull
-    private int size;
+    private String size;
 
     @NotNull
     private int point_value;
 
-    public ProductDetails(int quantity, int price, int size, int point_value) {
+    // price per unit
+    public ProductDetails(int quantity, double price, String size, int point_value) {
         this.quantity = quantity;
         this.price = price;
         this.size = size;
         this.point_value = point_value;
     }
-
 
     public CustomerOrder getOrder() {
         return order;
@@ -52,7 +53,7 @@ public class ProductDetails {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -60,11 +61,11 @@ public class ProductDetails {
         this.price = price;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
@@ -76,15 +77,23 @@ public class ProductDetails {
         this.point_value = point_value;
     }
 
-    @MapsId("orderId")
     @ManyToOne
     @JoinColumn(name = "order_id")
     private CustomerOrder order;
 
-    @MapsId("productId")
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-
+    @Override
+    public String toString() {
+        return "ProductDetails{" +
+                ", quantity=" + quantity +
+                ", price_per_unit=" + price +
+                ", size=" + size +
+                ", point_value=" + point_value +
+                ", order=" + order +
+                ", product=" + product.getName() +
+                '}';
+    }
 }

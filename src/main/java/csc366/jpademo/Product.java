@@ -13,14 +13,45 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long product_id;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @NotNull
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<CustomerOrder> orders;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getId() {
+        return product_id;
+    }
+
+    public void setId(long product_id) {
+        this.product_id = product_id;
+    }
+
+    // "product" exists as property in target entity (ProductDetails)
+    @OneToMany(mappedBy = "product",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<ProductDetails> productDetails = new ArrayList<>();
+
+    // "product" exists as property in target entity (CustomizationDetails)
+    @OneToMany(mappedBy = "product",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<CustomizationDetails> customizationDetails = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "product_id=" + product_id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

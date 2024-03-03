@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)     [commented bc of persistence error]
     private long customer_id;
 
     public Customer() {

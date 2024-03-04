@@ -14,11 +14,12 @@ public class Employee {
     @Id
     private long employee_id;
 
-    @NotNull
-    private String first_name;
+    @Column(name="first_name")
+    private String firstName;
 
     @NotNull
-    private String last_name;
+    @Column(name="last_name")
+    private String lastName;
 
     @NotNull
     @Email
@@ -32,7 +33,7 @@ public class Employee {
 
     @NotNull
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date start_date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
@@ -58,20 +59,29 @@ public class Employee {
         this.employee_id = employee_id;
     }
 
-    public String getFirstName() {
-        return first_name;
+    public Employee(long employee_id, String firstName, String lastName, String email, String phone_number, Date start_date) {
+        this.employee_id = employee_id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.start_date = start_date;
     }
 
-    public void setFirstName(String first_name) {
-        this.first_name = first_name;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
-    public void setLastName(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -90,23 +100,31 @@ public class Employee {
         this.phone_number = phone_number;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getStart_date() {
+        return start_date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStart_date(Date date) {
+        this.start_date = date;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "employee_id=" + employee_id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone_number='" + phone_number + '\'' +
-                ", date=" + date +
+                ", start_date=" + start_date +
                 '}';
     }
 

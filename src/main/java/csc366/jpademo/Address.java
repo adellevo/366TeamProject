@@ -24,12 +24,17 @@ public class Address {
     private String street_address;
 
     @NotNull
-    private String zip_code;
+    private int zip_code;
 
     @OneToOne
     @MapsId
     @JoinColumn(name = "office_id")
     private Office office;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "store_id")
+    private Store store;
 
     @OneToMany(mappedBy = "address",
             cascade = CascadeType.ALL,
@@ -37,7 +42,7 @@ public class Address {
             fetch = FetchType.LAZY)
     private List<AddressInstance> addressInstances = new ArrayList<>();
 
-    public Address(String country, String state, String city, String street_address, String zip_code) {
+    public Address(String country, String state, String city, String street_address, int zip_code) {
         this.country = country;
         this.state = state;
         this.city = city;
@@ -80,11 +85,11 @@ public class Address {
         this.street_address = street_address;
     }
 
-    public String getZip_code() {
+    public int getZip_code() {
         return zip_code;
     }
 
-    public void setZip_code(String zip_code) {
+    public void setZip_code(int zip_code) {
         this.zip_code = zip_code;
     }
 

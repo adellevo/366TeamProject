@@ -21,6 +21,10 @@ public class Store {
             fetch = FetchType.LAZY)
     private List<CustomerOrder> orders = new ArrayList<>();
 
+    @OneToOne(mappedBy = "store")
+    @PrimaryKeyJoinColumn
+    private Address address;
+
     @OneToMany(mappedBy = "store",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
@@ -42,5 +46,13 @@ public class Store {
 
     public void setId(long store_id) {
         this.store_id = store_id;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

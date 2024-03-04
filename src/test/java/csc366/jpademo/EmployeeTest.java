@@ -17,6 +17,7 @@ import org.springframework.test.context.TestPropertySource;
 
 import javax.persistence.EntityManager;
 
+import java.time.OffsetTime;
 import java.util.*;
 
 import org.slf4j.Logger;
@@ -81,6 +82,26 @@ public class EmployeeTest {
 
         e1.setRole(r1);
         e2.setRole(r2);
+
+        Address address1 = new Address("USA", "CA", "SLO", "1 Grand Ave", 93405);
+
+        Store store1 = new Store();
+        Office office1 = new Office();
+
+        office1.setAddress(address1);
+
+        office1.addEmployee(e1);
+
+        store1.setAddress(address1);
+
+        OffsetTime t1 = OffsetTime.now();
+        OffsetTime t2 = OffsetTime.now();
+        Shift shift1 = new Shift(date, t1, t2, false);
+
+        shift1.setStore(store1);
+        shift1.setEmployee(e2);
+
+
 
 
         entityManager.flush();  // "Synchronize the persistence context to the underlying database"

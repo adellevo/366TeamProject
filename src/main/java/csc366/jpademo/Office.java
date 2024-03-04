@@ -8,6 +8,7 @@ import java.util.List;
 public class Office {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long office_id;
 
     @OneToOne(mappedBy = "office")
@@ -25,6 +26,22 @@ public class Office {
     public Office() {}
     public Office(long office_id) {
         this.office_id = office_id;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void addEmployee(Employee employee) {
+        this.employees.add(employee);
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override

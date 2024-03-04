@@ -1,10 +1,9 @@
 package csc366.jpademo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Address {
@@ -26,6 +25,17 @@ public class Address {
 
     @NotNull
     private String zip_code;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "office_id")
+    private Office office;
+
+    @OneToMany(mappedBy = "address",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<AddressInstance> addressInstances = new ArrayList<>();
 
     public Address(String country, String state, String city, String street_address, String zip_code) {
         this.country = country;

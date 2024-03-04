@@ -2,7 +2,9 @@ package csc366.jpademo;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -21,6 +23,12 @@ public class Role {
 
     @NotNull
     private boolean exempt;
+
+    @OneToMany(mappedBy = "role",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<Employee> employees = new ArrayList<>();
 
     public Role() {}
     public Role(long role_id, String role_name, Date effective_date, boolean exempt) {

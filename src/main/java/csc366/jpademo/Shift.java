@@ -3,6 +3,7 @@ package csc366.jpademo;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Time;
+import java.time.OffsetTime;
 import java.util.Date;
 
 @Entity
@@ -17,18 +18,24 @@ public class Shift {
     private Date date;
 
     @NotNull
-    @Temporal(TemporalType.TIME)
-    private Time start_time;
+    private OffsetTime start_time;
 
     @NotNull
-    @Temporal(TemporalType.TIME)
-    private Time end_time;
+    private OffsetTime end_time;
 
     private boolean present;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "store_id")
+    private Store store;
+
     public Shift() {}
 
-    public Shift(Date date, Time start_time, Time end_time, boolean present) {
+    public Shift(Date date, OffsetTime start_time, OffsetTime end_time, boolean present) {
         this.date = date;
         this.start_time = start_time;
         this.end_time = end_time;
@@ -43,19 +50,19 @@ public class Shift {
         this.date = date;
     }
 
-    public Time getStart_time() {
+    public OffsetTime getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(Time start_time) {
+    public void setStart_time(OffsetTime start_time) {
         this.start_time = start_time;
     }
 
-    public Time getEnd_time() {
+    public OffsetTime getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(Time end_time) {
+    public void setEnd_time(OffsetTime end_time) {
         this.end_time = end_time;
     }
 

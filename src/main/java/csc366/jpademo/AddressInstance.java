@@ -2,7 +2,9 @@ package csc366.jpademo;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class AddressInstance {
@@ -18,6 +20,16 @@ public class AddressInstance {
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date end_date;
+
+    @OneToMany(mappedBy = "addressInstance",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<Employee> employees = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     public AddressInstance() {}
 

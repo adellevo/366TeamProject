@@ -4,7 +4,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -31,6 +33,23 @@ public class Employee {
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date date;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private Role role;
+
+    @OneToMany(mappedBy = "employee",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<Shift> shifts = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "employees")
+    private List<Office> offices = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_instance_id")
+    private AddressInstance addressInstance;
 
     public Employee() {
     }

@@ -21,6 +21,12 @@ public class Store {
             fetch = FetchType.LAZY)
     private List<CustomerOrder> orders = new ArrayList<>();
 
+    @OneToMany(mappedBy = "store",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<Shift> shifts = new ArrayList<>();
+
     @Override
     public String toString() {
         return "Store{" +

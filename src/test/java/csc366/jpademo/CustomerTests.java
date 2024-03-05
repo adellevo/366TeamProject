@@ -135,14 +135,14 @@ public class CustomerTests {
         CustomerOrder order4 = new CustomerOrder(date2, member1, store1);
         entityManager.persist(order2);
 
-        member1.setCustomerOrders(Arrays.asList(order4));
+        member2.setCustomerOrders(Arrays.asList(order4));
 
         ProductDetails productDetails4 = new ProductDetails(1, 2.25, "M", 30);
         productDetails4.setOrder(order4);
         productDetails4.setProduct(product2);
         order4.setPoints(productDetails4.getQuantity(), productDetails4.getPointValue());
-        order2.setCost(productDetails4.getPrice());
-        member1.setLoyaltyPoints(member1.getLoyaltyPoints() + order4.getPoints());
+        order4.setCost(productDetails4.getPrice());
+        member2.setLoyaltyPoints(member2.getLoyaltyPoints() + order4.getPoints());
         entityManager.persist(productDetails4);
 
         entityManager.flush();  // "Synchronize the persistence context to the underlying database"

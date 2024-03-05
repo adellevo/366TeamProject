@@ -54,6 +54,18 @@ public class Store {
             fetch = FetchType.LAZY)
     private List<Shift> shifts = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
+
+    public Owner getOwner(){
+        return owner;
+    }
+
+    public void setOwner(Owner owner){
+        this.owner = owner;
+    }
+
     @Override
     public String toString() {
         return "Store{" +

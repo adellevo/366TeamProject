@@ -88,7 +88,6 @@ public class CustomerTests {
         entityManager.persist(customer1);
 
         CustomerOrder order1 = new CustomerOrder(date1, customer1, store1);
-        order1.setCost(12.96);
         entityManager.persist(order1);
 
         customer1.setCustomerOrders(Arrays.asList(order1));
@@ -96,6 +95,7 @@ public class CustomerTests {
         ProductDetails productDetails1 = new ProductDetails(4, 3.25, "L", 0);
         productDetails1.setOrder(order1);
         productDetails1.setProduct(product1);
+        order1.setCost(productDetails1.getPrice());
         entityManager.persist(productDetails1);
 
         //   ------- Member 1 Setup -------
@@ -104,11 +104,9 @@ public class CustomerTests {
         entityManager.persist(member1);
 
         CustomerOrder order2 = new CustomerOrder(date2, member1, store1);
-        order2.setCost(12.96);
         entityManager.persist(order2);
 
         CustomerOrder order3 = new CustomerOrder(date3, member1, store1);
-        order2.setCost(2.50);
         entityManager.persist(order3);
 
         member1.setCustomerOrders(Arrays.asList(order2, order3));
@@ -117,6 +115,7 @@ public class CustomerTests {
         productDetails2.setOrder(order2);
         productDetails2.setProduct(product2);
         order2.setPoints(productDetails2.getQuantity(), productDetails2.getPointValue());
+        order2.setCost(productDetails2.getPrice());
         member1.setLoyaltyPoints(member1.getLoyaltyPoints() + order2.getPoints());
         entityManager.persist(productDetails2);
 
@@ -124,6 +123,7 @@ public class CustomerTests {
         productDetails3.setOrder(order3);
         productDetails3.setProduct(product3);
         order3.setPoints(productDetails3.getQuantity(), productDetails3.getPointValue());
+        order3.setCost(productDetails3.getPrice());
         member1.setLoyaltyPoints(member1.getLoyaltyPoints() + order3.getPoints());
         entityManager.persist(productDetails3);
 
@@ -133,7 +133,6 @@ public class CustomerTests {
         entityManager.persist(member2);
 
         CustomerOrder order4 = new CustomerOrder(date2, member1, store1);
-        order2.setCost(2.25);
         entityManager.persist(order2);
 
         member1.setCustomerOrders(Arrays.asList(order4));
@@ -142,6 +141,7 @@ public class CustomerTests {
         productDetails4.setOrder(order4);
         productDetails4.setProduct(product2);
         order4.setPoints(productDetails4.getQuantity(), productDetails4.getPointValue());
+        order2.setCost(productDetails4.getPrice());
         member1.setLoyaltyPoints(member1.getLoyaltyPoints() + order4.getPoints());
         entityManager.persist(productDetails4);
 

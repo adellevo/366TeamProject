@@ -25,6 +25,18 @@ public class Member extends Customer{
     @Column(unique = true)
     private String phone_number;
 
+    private int loyalty_points;
+
+    public Member() {}
+
+    public Member(String first_name, String last_name, String email, String phone_number) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.loyalty_points = 0;
+    }
+
     public int getLoyaltyPoints() {
         return loyalty_points;
     }
@@ -32,10 +44,6 @@ public class Member extends Customer{
     public void setLoyaltyPoints(int loyalty_points) {
         this.loyalty_points = loyalty_points;
     }
-
-    @NotNull
-    @Column(unique = true)
-    private int loyalty_points;
 
     public String getFirstName() {
         return first_name;
@@ -77,6 +85,7 @@ public class Member extends Customer{
                 ", email='" + email + '\'' +
                 ", phone_number='" + phone_number + '\'' +
                 ", loyalty_points=" + loyalty_points +
+                ", customer_orders" + this.getCustomerOrders() +
                 '}';
     }
 }

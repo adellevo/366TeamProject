@@ -18,11 +18,25 @@ public class CustomerOrder {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    @NotNull
     private double total_cost;
 
-    @NotNull
     private int points_earned;
+
+    public CustomerOrder() {}
+
+    public CustomerOrder(Date date, Customer customer, Store store) {
+        this.date = date;
+        this.customer = customer;
+        this.store = store;
+    }
+
+    public int getPoints() {
+        return points_earned;
+    }
+
+    public void setPoints(int quantity, int point_value) {
+        this.points_earned = quantity * point_value;
+    }
 
     public double getCost() {
         return total_cost;
@@ -70,13 +84,6 @@ public class CustomerOrder {
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<ProductDetails> productDetails = new ArrayList<>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CustomerOrder)) return false;
-        return order_id != null && order_id.equals(((CustomerOrder) o).getId());
-    }
 
     @Override
     public String toString() {

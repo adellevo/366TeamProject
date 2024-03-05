@@ -15,6 +15,29 @@ public class Store {
     private Time opening_time;
     private Time closing_time;
 
+    public Store() {}
+
+    public Store(Time opening_time, Time closing_time) {
+        this.opening_time = opening_time;
+        this.closing_time = closing_time;
+    }
+
+    public long getId() {
+        return store_id;
+    }
+
+    public void setId(long store_id) {
+        this.store_id = store_id;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @OneToMany(mappedBy = "store",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
@@ -38,21 +61,5 @@ public class Store {
                 ", opening_time=" + opening_time +
                 ", closing_time=" + closing_time +
                 '}';
-    }
-
-    public long getId() {
-        return store_id;
-    }
-
-    public void setId(long store_id) {
-        this.store_id = store_id;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 }

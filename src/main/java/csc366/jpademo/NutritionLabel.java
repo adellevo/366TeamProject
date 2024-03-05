@@ -12,9 +12,23 @@ public class NutritionLabel {
 
     @NotNull
     @Column(unique = true)
-    private String calories;
+    private int calories;
 
     @NotNull
     @Column(unique = true)
-    private String total_grams_fat;
+    private int total_grams_fat;
+
+    public NutritionLabel( int calories, int total_grams_fat) {
+        this.calories = calories;
+        this.total_grams_fat = total_grams_fat;
+    }
+
+    @Override
+    public String toString() {
+        return "NutritionLabel{" +
+                "label_id=" + label_id +
+                ", calories=" + calories +
+                ", total_grams_fat=" + total_grams_fat +
+                '}';
+    }
 }

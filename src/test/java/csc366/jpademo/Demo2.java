@@ -18,9 +18,7 @@ import org.springframework.test.context.TestPropertySource;
 import javax.persistence.EntityManager;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -80,8 +78,7 @@ public class Demo2 {
 
         customer.setCustomerOrders(Arrays.asList(order));
 
-        Product product = new Product();
-        product.setName("coffee");
+        Product product = new Product("coffee");
         entityManager.persist(product);
 
         ProductDetails productDetails = new ProductDetails(1, 6.50, "S", 10);
@@ -99,12 +96,7 @@ public class Demo2 {
         order3.setCost(9.10);
         order3.setStore(store2);
 
-        Member member = new Member();
-        member.setEmail("test@example.com");
-        member.setFirstName("Jane");
-        member.setLastName("Doe");
-        member.setPhoneNumber("1234567890");
-        member.setLoyaltyPoints(20);
+        Member member = new Member("Jane", "Doe", "jdoe@gmail.com", "8902902988");
         member.setCustomerOrders(Arrays.asList(order2, order3));
 
         entityManager.persist(store1);
@@ -161,12 +153,10 @@ public class Demo2 {
         Member member = memberRepository.findAll().get(0);
 
         // new products
-        Product product1 = new Product();
-        product1.setName("smoothie");
+        Product product1 = new Product("smoothie");
         entityManager.persist(product1);
 
-        Product product2 = new Product();
-        product2.setName("scone");
+        Product product2 = new Product("scone");
         entityManager.persist(product2);
 
         // orders

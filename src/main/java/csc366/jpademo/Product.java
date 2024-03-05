@@ -17,6 +17,10 @@ public class Product {
     @Column(unique = true)
     private String name;
 
+    public Product( String name) {
+        this.name = name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

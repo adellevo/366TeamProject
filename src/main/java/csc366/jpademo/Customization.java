@@ -8,6 +8,10 @@ import java.util.List;
 
 @Entity
 public class Customization extends Ingredient{
+    public Customization(String name) {
+        super(name);
+    }
+
     // “customization” exists as property in target entity (CustomizationDetails)
     @OneToMany(mappedBy = "customization",
             cascade = CascadeType.ALL,

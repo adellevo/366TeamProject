@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)     [commented bc of persistence error]
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    // [commented bc of persistence error]
     private long customer_id;
 
     public Customer() {
@@ -49,7 +49,7 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "customer_id=" + customer_id +
-                ", customerOrders=" + customerOrders +
+                ", customer_orders=" + customerOrders +
                 '}';
     }
 }

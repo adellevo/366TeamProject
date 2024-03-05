@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long>{
+    @Query(value = "SELECT member FROM customer WHERE first_name = :f_name", nativeQuery = true)
+    Member findByFirstName(@Param("f_name") String first_name);
     @Query(value = "SELECT loyalty_points FROM customer WHERE customer_id = :c_id", nativeQuery = true)
     Integer findLoyaltyPoints(@Param("c_id") long customer_id);
 }

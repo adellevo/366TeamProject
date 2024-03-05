@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">5</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.482s</div>
+<div class="counter">0.116s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,584 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testFindAllStoresOrderedFrom()"></a>
+<h3 class="failures">testFindAllStoresOrderedFrom()</h3>
+<span class="code">
+<pre>javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:708)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy106.persist(Unknown Source)
+	at app//csc366.jpademo.Demo2.setup(Demo2.java:72)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:111)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:67)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:464)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$16(ClassBasedTestDescriptor.java:449)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$2(TestMethodTestDescriptor.java:159)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$5(TestMethodTestDescriptor.java:187)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:187)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:156)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702)
+	... 95 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testFindLoyaltyPoints()"></a>
+<h3 class="failures">testFindLoyaltyPoints()</h3>
+<span class="code">
+<pre>javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:708)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy106.persist(Unknown Source)
+	at app//csc366.jpademo.Demo2.setup(Demo2.java:72)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:111)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:67)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:464)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$16(ClassBasedTestDescriptor.java:449)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$2(TestMethodTestDescriptor.java:159)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$5(TestMethodTestDescriptor.java:187)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:187)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:156)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702)
+	... 95 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testFindMostFrequentlyOrderedProduct()"></a>
+<h3 class="failures">testFindMostFrequentlyOrderedProduct()</h3>
+<span class="code">
+<pre>javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:708)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy106.persist(Unknown Source)
+	at app//csc366.jpademo.Demo2.setup(Demo2.java:72)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:111)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:67)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:464)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$16(ClassBasedTestDescriptor.java:449)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$2(TestMethodTestDescriptor.java:159)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$5(TestMethodTestDescriptor.java:187)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:187)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:156)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702)
+	... 95 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testFindOrderTotalCost()"></a>
+<h3 class="failures">testFindOrderTotalCost()</h3>
+<span class="code">
+<pre>javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:708)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy106.persist(Unknown Source)
+	at app//csc366.jpademo.Demo2.setup(Demo2.java:72)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:111)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:67)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:464)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$16(ClassBasedTestDescriptor.java:449)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$2(TestMethodTestDescriptor.java:159)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$5(TestMethodTestDescriptor.java:187)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:187)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:156)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702)
+	... 95 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testGetOrderDetails()"></a>
+<h3 class="failures">testGetOrderDetails()</h3>
+<span class="code">
+<pre>javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at app//org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:708)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:688)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy106.persist(Unknown Source)
+	at app//csc366.jpademo.Demo2.setup(Demo2.java:72)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:111)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:67)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:464)
+	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$16(ClassBasedTestDescriptor.java:449)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$2(TestMethodTestDescriptor.java:159)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$5(TestMethodTestDescriptor.java:187)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:187)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:156)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: csc366.jpademo.Customer
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:127)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:62)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:702)
+	... 95 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,59 +649,80 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testFindAllStoresOrderedFrom()</td>
-<td class="success">0.029s</td>
-<td class="success">passed</td>
+<td class="failures">testFindAllStoresOrderedFrom()</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">testFindLoyaltyPoints()</td>
-<td class="success">0.028s</td>
-<td class="success">passed</td>
+<td class="failures">testFindLoyaltyPoints()</td>
+<td class="failures">0.003s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">testFindMostFrequentlyOrderedProduct()</td>
-<td class="success">0.058s</td>
-<td class="success">passed</td>
+<td class="failures">testFindMostFrequentlyOrderedProduct()</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">testFindOrderTotalCost()</td>
-<td class="success">0.341s</td>
-<td class="success">passed</td>
+<td class="failures">testFindOrderTotalCost()</td>
+<td class="failures">0.101s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">testGetOrderDetails()</td>
-<td class="success">0.026s</td>
-<td class="success">passed</td>
+<td class="failures">testGetOrderDetails()</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:39:29.131 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-14:39:29.146 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-14:39:29.187 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [csc366.jpademo.Demo2] from class [org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper]
-14:39:29.210 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [csc366.jpademo.Demo2], using SpringBootContextLoader
-14:39:29.215 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2-context.xml] does not exist
-14:39:29.216 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2Context.groovy] does not exist
-14:39:29.216 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [csc366.jpademo.Demo2]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:39:29.218 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [csc366.jpademo.Demo2]: Demo2 does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:39:29.362 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/adellevo/Desktop/366TeamProject/build/classes/java/main/csc366/jpademo/JpaDemoApplication.class]
-14:39:29.371 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration csc366.jpademo.JpaDemoApplication for test class csc366.jpademo.Demo2
-14:39:29.373 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - @TestExecutionListeners is not present for class [csc366.jpademo.Demo2]: using defaults.
-14:39:29.373 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-14:39:29.394 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@522a32b1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35390ee3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e01a982, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5ddea849, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5ee2b6f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23d1e5d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@704f1591, org.springframework.test.context.event.EventPublishingTestExecutionListener@58fb7731, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@13e547a9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3fb6cf60, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37ddb69a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@349c1daf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@dfddc9a]
-14:39:29.398 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@52de51b6 testClass = Demo2, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1c2c22da, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
-14:39:29.414 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@52de51b6 testClass = Demo2, testInstance = csc366.jpademo.Demo2@7096b474, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1c2c22da, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
-14:39:29.547 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true, server.port=-1}
-2024-03-02 14:39:29 - Starting Demo2 on Adelles-MBP.lan with PID 39096 (started by adellevo in /Users/adellevo/Desktop/366TeamProject)
-2024-03-02 14:39:29 - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2024-03-02 14:39:29 - The following profiles are active: junit
-2024-03-02 14:39:32 - 
+<pre>19:56:48.569 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:56:48.578 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:56:48.605 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [csc366.jpademo.Demo2] from class [org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper]
+19:56:48.618 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [csc366.jpademo.Demo2], using SpringBootContextLoader
+19:56:48.621 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2-context.xml] does not exist
+19:56:48.621 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [csc366.jpademo.Demo2]: class path resource [csc366/jpademo/Demo2Context.groovy] does not exist
+19:56:48.622 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [csc366.jpademo.Demo2]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:56:48.622 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [csc366.jpademo.Demo2]: Demo2 does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:56:48.717 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/adellevo/Desktop/366TeamProject/build/classes/java/main/csc366/jpademo/JpaDemoApplication.class]
+19:56:48.723 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration csc366.jpademo.JpaDemoApplication for test class csc366.jpademo.Demo2
+19:56:48.724 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - @TestExecutionListeners is not present for class [csc366.jpademo.Demo2]: using defaults.
+19:56:48.725 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+19:56:48.736 [Test worker] INFO org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@522a32b1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35390ee3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e01a982, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5ddea849, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5ee2b6f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@23d1e5d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@704f1591, org.springframework.test.context.event.EventPublishingTestExecutionListener@58fb7731, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@13e547a9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3fb6cf60, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@37ddb69a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@349c1daf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@dfddc9a]
+19:56:48.738 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@52de51b6 testClass = Demo2, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1c2c22da, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+19:56:48.747 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@52de51b6 testClass = Demo2, testInstance = csc366.jpademo.Demo2@7096b474, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@18c5069b testClass = Demo2, locations = '{}', classes = '{class csc366.jpademo.JpaDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{junit}', propertySourceLocations = '{}', propertySourceProperties = '{spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@2b76ff4e, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1c2c22da, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40db2a24, [ImportsContextCustomizer@3a0d172f key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6995bf68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3568f9d2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+19:56:48.820 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, spring.main.banner-mode=off, logging.level.root=ERROR, logging.level.csc366=DEBUG, spring.jpa.hibernate.ddl-auto=update, spring.datasource.url=jdbc:mysql://mysql.labthreesixsix.com/csc366, spring.datasource.username=jpa, spring.datasource.password=demo, logging.level.org.hibernate.SQL=DEBUG, logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE, spring.jpa.properties.hibernate.format_sql=true, spring.jpa.show-sql=false, spring.jpa.properties.hibernate.show_sql=false, logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} - %msg%n, org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true, server.port=-1}
+2024-03-04 19:56:48 - Starting Demo2 on Adelles-MBP.lan with PID 4329 (started by adellevo in /Users/adellevo/Desktop/366TeamProject)
+2024-03-04 19:56:48 - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2024-03-04 19:56:48 - The following profiles are active: junit
+2024-03-04 19:56:50 - 
+    
+    create table address (
+       store_id bigint not null,
+        city varchar(255) not null,
+        country varchar(255) not null,
+        state varchar(255),
+        street_address varchar(255) not null,
+        zip_code integer not null,
+        office_id bigint not null,
+        primary key (store_id)
+    )
+2024-03-04 19:56:50 - 
+    
+    create table address_instance (
+       address_instance_id bigint generated by default as identity,
+        end_date date not null,
+        start_date date not null,
+        address_id bigint,
+        primary key (address_instance_id)
+    )
+2024-03-04 19:56:50 - 
     
     create table customer (
        customer_type integer not null,
-        customer_id bigint not null,
+        customer_id bigint generated by default as identity,
         email varchar(255),
         first_name varchar(255),
         last_name varchar(255),
@@ -138,7 +730,7 @@
         phone_number varchar(15),
         primary key (customer_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     create table customer_order (
        order_id bigint generated by default as identity,
@@ -149,7 +741,7 @@
         store_id bigint,
         primary key (order_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     create table customization_details (
        customization_details_id bigint generated by default as identity,
@@ -159,7 +751,20 @@
         product_id bigint,
         primary key (customization_details_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    create table employee (
+       employee_id bigint not null,
+        email varchar(255) not null,
+        first_name varchar(255),
+        last_name varchar(255) not null,
+        phone_number varchar(15) not null,
+        start_date date not null,
+        address_instance_id bigint,
+        role_id bigint,
+        primary key (employee_id)
+    )
+2024-03-04 19:56:50 - 
     
     create table ingredient (
        dtype varchar(31) not null,
@@ -167,22 +772,34 @@
         name varchar(255) not null,
         primary key (ingredient_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     create table nutrition_label (
        label_id bigint generated by default as identity,
-        calories varchar(255) not null,
-        total_grams_fat varchar(255) not null,
+        calories integer not null,
+        total_grams_fat integer not null,
         primary key (label_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    create table office (
+       office_id bigint generated by default as identity,
+        primary key (office_id)
+    )
+2024-03-04 19:56:50 - 
+    
+    create table office_employee (
+       office_id bigint not null,
+        employee_id bigint not null
+    )
+2024-03-04 19:56:50 - 
     
     create table product (
        product_id bigint generated by default as identity,
         name varchar(255) not null,
         primary key (product_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     create table product_details (
        product_details_id bigint generated by default as identity,
@@ -194,7 +811,31 @@
         product_id bigint,
         primary key (product_details_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    create table role (
+       role_type integer not null,
+        role_id bigint not null,
+        effective_date date not null,
+        exempt boolean not null,
+        role_name varchar(255) not null,
+        hourly_pay double,
+        salary double,
+        primary key (role_id)
+    )
+2024-03-04 19:56:50 - 
+    
+    create table shift (
+       shift_id bigint generated by default as identity,
+        date date not null,
+        end_time time not null,
+        present boolean not null,
+        start_time time not null,
+        employee_id bigint,
+        store_id bigint,
+        primary key (shift_id)
+    )
+2024-03-04 19:56:50 - 
     
     create table store (
        store_id bigint generated by default as identity,
@@ -202,819 +843,169 @@
         opening_time time,
         primary key (store_id)
     )
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    alter table address 
+       drop constraint if exists UK_3co8odvfm6uop9mevqndhlqwd
+2024-03-04 19:56:50 - 
+    
+    alter table address 
+       add constraint UK_3co8odvfm6uop9mevqndhlqwd unique (office_id)
+2024-03-04 19:56:50 - 
     
     alter table customer 
        drop constraint if exists UK_dwk6cx0afu8bs9o4t536v1j5v
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customer 
        add constraint UK_dwk6cx0afu8bs9o4t536v1j5v unique (email)
-2024-03-02 14:39:32 - 
-    
-    alter table customer 
-       drop constraint if exists UK_m7ntsh8nqls5bld45v3kc99hk
-2024-03-02 14:39:32 - 
-    
-    alter table customer 
-       add constraint UK_m7ntsh8nqls5bld45v3kc99hk unique (loyalty_points)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customer 
        drop constraint if exists UK_rosd2guvs3i1agkplv5n8vu82
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customer 
        add constraint UK_rosd2guvs3i1agkplv5n8vu82 unique (phone_number)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       drop constraint if exists UK_fopic1oh5oln2khj8eat6ino0
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       add constraint UK_fopic1oh5oln2khj8eat6ino0 unique (email)
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       drop constraint if exists UK_if2qx9bhvigig71puh5sow65g
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       add constraint UK_if2qx9bhvigig71puh5sow65g unique (phone_number)
+2024-03-04 19:56:50 - 
     
     alter table ingredient 
        drop constraint if exists UK_bcuaj97y3iu3t2vj26jg6hijj
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table ingredient 
        add constraint UK_bcuaj97y3iu3t2vj26jg6hijj unique (name)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table nutrition_label 
        drop constraint if exists UK_93aauoplfde3jgqhp3qv9f1vd
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table nutrition_label 
        add constraint UK_93aauoplfde3jgqhp3qv9f1vd unique (calories)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table nutrition_label 
        drop constraint if exists UK_np9t28wm6d9droe5wtmkwbd13
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table nutrition_label 
        add constraint UK_np9t28wm6d9droe5wtmkwbd13 unique (total_grams_fat)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table product 
        drop constraint if exists UK_jmivyxk9rmgysrmsqw15lqr5b
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table product 
        add constraint UK_jmivyxk9rmgysrmsqw15lqr5b unique (name)
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    alter table address 
+       add constraint FK61p4jbqsmnpqt0ba85apqwi39 
+       foreign key (office_id) 
+       references office
+2024-03-04 19:56:50 - 
+    
+    alter table address 
+       add constraint FK94bdwm7ar7trodbsddelual0l 
+       foreign key (store_id) 
+       references store
+2024-03-04 19:56:50 - 
+    
+    alter table address_instance 
+       add constraint FKky83dkfapuqsds7np08hsjx3y 
+       foreign key (address_id) 
+       references address
+2024-03-04 19:56:50 - 
     
     alter table customer_order 
        add constraint FKf9abd30bhiqvugayxlpq8ryq9 
        foreign key (customer_id) 
        references customer
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customer_order 
        add constraint FKmajgn7v8wotqdc9s4psimtwjg 
        foreign key (store_id) 
        references store
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customization_details 
        add constraint FKpt25h8jajlybiy7kmc7q715rd 
        foreign key (ingredient_id) 
        references ingredient
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table customization_details 
        add constraint FKg2opptq9889mqeta1higfc6vn 
        foreign key (product_id) 
        references product
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       add constraint FKkcyyioa6ua96b4mo5eye7kdou 
+       foreign key (address_instance_id) 
+       references address_instance
+2024-03-04 19:56:50 - 
+    
+    alter table employee 
+       add constraint FK3046kvjyysq288vy3lsbtc9nw 
+       foreign key (role_id) 
+       references role
+2024-03-04 19:56:50 - 
+    
+    alter table office_employee 
+       add constraint FKnwl4lugbq9e6rb7iwprl2apw1 
+       foreign key (employee_id) 
+       references employee
+2024-03-04 19:56:50 - 
+    
+    alter table office_employee 
+       add constraint FK61ih325gl5q6op0c3y6kataqg 
+       foreign key (office_id) 
+       references office
+2024-03-04 19:56:50 - 
     
     alter table product_details 
        add constraint FK5v7jkk2wxjtr17ou8xx08x0pv 
        foreign key (order_id) 
        references customer_order
-2024-03-02 14:39:32 - 
+2024-03-04 19:56:50 - 
     
     alter table product_details 
        add constraint FKrhahp4f26x99lqf0kybcs79rb 
        foreign key (product_id) 
        references product
-2024-03-02 14:39:33 - Started Demo2 in 3.863 seconds (JVM running for 5.306)
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (customer_type, customer_id) 
-    values
-        (670819326, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [35.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [coffee]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [1]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [6.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [1]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [S]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
-    values
-        (?, ?, ?, ?, ?, 1, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [test@example.com]
-2024-03-02 14:39:33 - binding parameter [2] as [VARCHAR] - [Jane]
-2024-03-02 14:39:33 - binding parameter [3] as [VARCHAR] - [Doe]
-2024-03-02 14:39:33 - binding parameter [4] as [INTEGER] - [20]
-2024-03-02 14:39:33 - binding parameter [5] as [VARCHAR] - [1234567890]
-2024-03-02 14:39:33 - binding parameter [6] as [BIGINT] - [0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [1]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [125.12]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [2]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [9.1]
-2024-03-02 14:39:33 - 
-    select
-        customer0_.customer_id as customer2_0_,
-        customer0_.email as email3_0_,
-        customer0_.first_name as first_na4_0_,
-        customer0_.last_name as last_nam5_0_,
-        customer0_.loyalty_points as loyalty_6_0_,
-        customer0_.phone_number as phone_nu7_0_,
-        customer0_.customer_type as customer1_0_ 
-    from
-        customer customer0_
-2024-03-02 14:39:33 - 
-    SELECT
-        total_cost 
-    FROM
-        customer_order 
-    WHERE
-        customer_id = ? 
-        and order_id = ?
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [BIGINT] - [1]
-2024-03-02 14:39:33 - Total cost: 35.0
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (customer_type, customer_id) 
-    values
-        (670819326, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [35.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [coffee]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [4]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [6.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [2]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [S]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
-    values
-        (?, ?, ?, ?, ?, 1, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [test@example.com]
-2024-03-02 14:39:33 - binding parameter [2] as [VARCHAR] - [Jane]
-2024-03-02 14:39:33 - binding parameter [3] as [VARCHAR] - [Doe]
-2024-03-02 14:39:33 - binding parameter [4] as [INTEGER] - [20]
-2024-03-02 14:39:33 - binding parameter [5] as [VARCHAR] - [1234567890]
-2024-03-02 14:39:33 - binding parameter [6] as [BIGINT] - [0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [3]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [125.12]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [4]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [9.1]
-2024-03-02 14:39:33 - 
-    select
-        member0_.customer_id as customer2_0_,
-        member0_.email as email3_0_,
-        member0_.first_name as first_na4_0_,
-        member0_.last_name as last_nam5_0_,
-        member0_.loyalty_points as loyalty_6_0_,
-        member0_.phone_number as phone_nu7_0_ 
-    from
-        customer member0_ 
-    where
-        member0_.customer_type=1
-2024-03-02 14:39:33 - 
-    SELECT
-        loyalty_points 
-    FROM
-        customer 
-    WHERE
-        customer_id = ?
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - Loyalty points: 20
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (customer_type, customer_id) 
-    values
-        (670819326, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [35.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [coffee]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [7]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [6.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [3]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [S]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
-    values
-        (?, ?, ?, ?, ?, 1, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [test@example.com]
-2024-03-02 14:39:33 - binding parameter [2] as [VARCHAR] - [Jane]
-2024-03-02 14:39:33 - binding parameter [3] as [VARCHAR] - [Doe]
-2024-03-02 14:39:33 - binding parameter [4] as [INTEGER] - [20]
-2024-03-02 14:39:33 - binding parameter [5] as [VARCHAR] - [1234567890]
-2024-03-02 14:39:33 - binding parameter [6] as [BIGINT] - [0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [5]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [125.12]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [6]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [9.1]
-2024-03-02 14:39:33 - 
-    select
-        customer0_.customer_id as customer2_0_,
-        customer0_.email as email3_0_,
-        customer0_.first_name as first_na4_0_,
-        customer0_.last_name as last_nam5_0_,
-        customer0_.loyalty_points as loyalty_6_0_,
-        customer0_.phone_number as phone_nu7_0_,
-        customer0_.customer_type as customer1_0_ 
-    from
-        customer customer0_
-2024-03-02 14:39:33 - 
-    select
-        productdet0_.product_details_id as product_1_6_,
-        productdet0_.order_id as order_id6_6_,
-        productdet0_.point_value as point_va2_6_,
-        productdet0_.price as price3_6_,
-        productdet0_.product_id as product_7_6_,
-        productdet0_.quantity as quantity4_6_,
-        productdet0_.size as size5_6_ 
-    from
-        product_details productdet0_ 
-    where
-        productdet0_.order_id=?
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [7]
-2024-03-02 14:39:33 - All product details: [ProductDetails{, quantity=1, price_per_unit=6.5, size=S, point_value=10, order=CustomerOrder{order_id=7, date=null, total_cost=35.0, points_earned=0, customer=10}, product=coffee}]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (customer_type, customer_id) 
-    values
-        (670819326, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [35.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [coffee]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [6.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [4]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [S]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
-    values
-        (?, ?, ?, ?, ?, 1, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [test@example.com]
-2024-03-02 14:39:33 - binding parameter [2] as [VARCHAR] - [Jane]
-2024-03-02 14:39:33 - binding parameter [3] as [VARCHAR] - [Doe]
-2024-03-02 14:39:33 - binding parameter [4] as [INTEGER] - [20]
-2024-03-02 14:39:33 - binding parameter [5] as [VARCHAR] - [1234567890]
-2024-03-02 14:39:33 - binding parameter [6] as [BIGINT] - [0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [7]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [125.12]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [8]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [9.1]
-2024-03-02 14:39:33 - 
-    select
-        member0_.customer_id as customer2_0_,
-        member0_.email as email3_0_,
-        member0_.first_name as first_na4_0_,
-        member0_.last_name as last_nam5_0_,
-        member0_.loyalty_points as loyalty_6_0_,
-        member0_.phone_number as phone_nu7_0_ 
-    from
-        customer member0_ 
-    where
-        member0_.customer_type=1
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [smoothie]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [scone]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [13]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [5]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [L]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [14]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [5]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [L]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [15]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [7.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [5]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [L]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [100.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [16]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [3.25]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [6]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [4]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [L]
-2024-03-02 14:39:33 - 
-    select
-        productdet0_.product_id as col_0_0_,
-        sum(productdet0_.quantity) as col_1_0_,
-        product1_.product_id as product_1_5_,
-        product1_.name as name2_5_ 
-    from
-        product_details productdet0_ 
-    inner join
-        product product1_ 
-            on productdet0_.product_id=product1_.product_id cross 
-    join
-        customer_order customeror2_ 
-    where
-        productdet0_.order_id=customeror2_.order_id 
-        and customeror2_.customer_id=? 
-    group by
-        productdet0_.product_id 
-    order by
-        SUM(productdet0_.quantity) DESC
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [0]
-2024-03-02 14:39:33 - Most frequently ordered product: Product{product_id=6, name='scone'} | Quantity: 4
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (customer_type, customer_id) 
-    values
-        (670819326, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [35.0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product
-        (product_id, name) 
-    values
-        (null, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [coffee]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        product_details
-        (product_details_id, order_id, point_value, price, product_id, quantity, size) 
-    values
-        (null, ?, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [17]
-2024-03-02 14:39:33 - binding parameter [2] as [INTEGER] - [10]
-2024-03-02 14:39:33 - binding parameter [3] as [DOUBLE] - [6.5]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [7]
-2024-03-02 14:39:33 - binding parameter [5] as [INTEGER] - [1]
-2024-03-02 14:39:33 - binding parameter [6] as [VARCHAR] - [S]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        store
-        (store_id, closing_time, opening_time) 
-    values
-        (null, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [TIME] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [TIME] - [null]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer
-        (email, first_name, last_name, loyalty_points, phone_number, customer_type, customer_id) 
-    values
-        (?, ?, ?, ?, ?, 1, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [VARCHAR] - [test@example.com]
-2024-03-02 14:39:33 - binding parameter [2] as [VARCHAR] - [Jane]
-2024-03-02 14:39:33 - binding parameter [3] as [VARCHAR] - [Doe]
-2024-03-02 14:39:33 - binding parameter [4] as [INTEGER] - [20]
-2024-03-02 14:39:33 - binding parameter [5] as [VARCHAR] - [1234567890]
-2024-03-02 14:39:33 - binding parameter [6] as [BIGINT] - [0]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [9]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [125.12]
-2024-03-02 14:39:33 - 
-    insert 
-    into
-        customer_order
-        (order_id, customer_id, date, points_earned, store_id, total_cost) 
-    values
-        (null, ?, ?, ?, ?, ?)
-2024-03-02 14:39:33 - binding parameter [1] as [BIGINT] - [null]
-2024-03-02 14:39:33 - binding parameter [2] as [DATE] - [null]
-2024-03-02 14:39:33 - binding parameter [3] as [INTEGER] - [0]
-2024-03-02 14:39:33 - binding parameter [4] as [BIGINT] - [10]
-2024-03-02 14:39:33 - binding parameter [5] as [DOUBLE] - [9.1]
-2024-03-02 14:39:33 - 
-    select
-        member0_.customer_id as customer2_0_,
-        member0_.email as email3_0_,
-        member0_.first_name as first_na4_0_,
-        member0_.last_name as last_nam5_0_,
-        member0_.loyalty_points as loyalty_6_0_,
-        member0_.phone_number as phone_nu7_0_ 
-    from
-        customer member0_ 
-    where
-        member0_.customer_type=1
-memberId: 0
-2024-03-02 14:39:33 - 
-    select
-        store0_.store_id as store_id1_7_,
-        store0_.closing_time as closing_2_7_,
-        store0_.opening_time as opening_3_7_ 
-    from
-        store store0_
-2024-03-02 14:39:33 - All stores: [Store{store_id=9, opening_time=null, closing_time=null}, Store{store_id=10, opening_time=null, closing_time=null}]
+2024-03-04 19:56:50 - 
+    
+    alter table shift 
+       add constraint FKg9ycreft1sv2jjvkno3dn3fqy 
+       foreign key (employee_id) 
+       references employee
+2024-03-04 19:56:50 - 
+    
+    alter table shift 
+       add constraint FK7q805harb8kx7fote4xbifi1 
+       foreign key (store_id) 
+       references store
+2024-03-04 19:56:51 - Started Demo2 in 2.484 seconds (JVM running for 3.344)
 </pre>
 </span>
 </div>
@@ -1026,7 +1017,7 @@ memberId: 0
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at Mar 2, 2024, 2:39:33 PM</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at Mar 4, 2024, 7:56:51 PM</p>
 </div>
 </div>
 </body>

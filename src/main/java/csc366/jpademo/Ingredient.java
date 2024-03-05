@@ -15,6 +15,18 @@ public class Ingredient {
     @Column(unique = true)
     private String name;
 
+    public Ingredient(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "ingredient_id=" + ingredient_id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
 //    @OneToMany(mappedBy = "ingredient",
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true,

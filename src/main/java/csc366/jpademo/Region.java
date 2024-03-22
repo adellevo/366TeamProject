@@ -14,9 +14,8 @@ import javax.validation.constraints.NotNull;
 public class Region {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="region_id")
-    private long region_id;
+    private int region_id;
 
     @NotNull
     @Column(name="region_name")
@@ -39,14 +38,22 @@ public class Region {
 
 
 
-    public long getRegion_id() {
+    public int getRegion_id() {
         return region_id;
     }
 
 
 
-    public void setRegion_id(long region_id) {
+    public void setRegion_id(int region_id) {
         this.region_id = region_id;
+    }
+
+
+
+    public Region(int region_id, @NotNull String region_name, RegionalManager regional_manager) {
+        this.region_id = region_id;
+        this.region_name = region_name;
+        this.regional_manager = regional_manager;
     }
 
 
